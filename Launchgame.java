@@ -6,9 +6,9 @@ class guesser{
     int guessnum()
     {
         int guess;
-        System.out.println("guess any number");
-        Scanner scan = new Scanner(System.in);
-            guess = scan.nextInt();
+        Random random = new Random();   
+
+        guess = random.nextInt(10);  
         
         return guess;
     }
@@ -104,11 +104,15 @@ class umpire
 class Launchgame
 {
     public static void main(String[] args) {
+
         umpire um = new umpire();
         um.collectFromGuesser();
         um.collectFromPlayer();
         um.compare();
         
+        guesser hehe = new guesser();
+        int k = hehe.guessnum();
+        System.out.println("guessed number is " + k);
 
     }
 
